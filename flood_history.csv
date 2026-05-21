@@ -1,0 +1,515 @@
+city,flood_prone_score
+Kabupaten Aceh Selatan,18.45
+Kabupaten Aceh Tenggara,8.21
+Kabupaten Aceh Timur,2.26
+Kabupaten Aceh Tengah,14.41
+Kabupaten Aceh Barat,12.34
+Kabupaten Aceh Besar,2.08
+Kabupaten Pidie,11.65
+Kabupaten Aceh Utara,15.22
+Kabupaten Simeulue,9.22
+Kabupaten Aceh Singkil,9.65
+Kabupaten Bireuen,1.45
+Kabupaten Aceh Barat Daya,12.04
+Kabupaten Gayo Lues,17.26
+Kabupaten Aceh Jaya,16.24
+Kabupaten Nagan Raya,10.57
+Kabupaten Aceh Tamiang,19.22
+Kabupaten Bener Meriah,4.08
+Kabupaten Pidie Jaya,14.52
+Kota Banda Aceh,5.15
+Kota Sabang,16.12
+Kota Lhokseumawe,4.12
+Kota Langsa,3.67
+Kota Subulussalam,2.58
+Kabupaten Tapanuli Tengah,5.95
+Kabupaten Tapanuli Utara,3.0
+Kabupaten Tapanuli Selatan,13.0
+Kabupaten Nias,15.69
+Kabupaten Langkat,11.56
+Kabupaten Karo,6.92
+Kabupaten Deli Serdang,19.22
+Kabupaten Simalungun,11.27
+Kabupaten Asahan,10.55
+Kabupaten Labuhanbatu,7.56
+Kabupaten Dairi,12.74
+Kabupaten Toba,19.91
+Kabupaten Mandailing Natal,17.32
+Kabupaten Nias Selatan,14.83
+Kabupaten Pakpak Bharat,2.73
+Kabupaten Humbang Hasundutan,12.83
+Kabupaten Samosir,1.71
+Kabupaten Serdang Bedagai,14.54
+Kabupaten Batu Bara,5.06
+Kabupaten Padang Lawas Utara,16.46
+Kabupaten Padang Lawas,14.71
+Kabupaten Labuhanbatu Selatan,12.26
+Kabupaten Labuhanbatu Utara,19.87
+Kabupaten Nias Utara,19.67
+Kabupaten Nias Barat,15.15
+Kota Medan,10.99
+Kota Pematangsiantar,6.87
+Kota Sibolga,16.91
+Kota Tanjungbalai,11.75
+Kota Binjai,10.18
+Kota Tebing Tinggi,8.18
+Kota Padangsidimpuan,13.33
+Kota Gunungsitoli,18.87
+Kabupaten Pesisir Selatan,2.25
+Kabupaten Solok,18.72
+Kabupaten Sijunjung,4.09
+Kabupaten Tanah Datar,3.09
+Kabupaten Padang Pariaman,18.58
+Kabupaten Agam,3.53
+Kabupaten Lima Puluh Kota,5.09
+Kabupaten Pasaman,14.42
+Kabupaten Kepulauan Mentawai,2.13
+Kabupaten Dharmasraya,1.05
+Kabupaten Solok Selatan,16.98
+Kabupaten Pasaman Barat,18.84
+Kota Padang,11.3
+Kota Solok,15.32
+Kota Sawahlunto,4.93
+Kota Padang Panjang,6.99
+Kota Bukittinggi,15.58
+Kota Payakumbuh,8.43
+Kota Pariaman,11.08
+Kabupaten Kampar,8.35
+Kabupaten Indragiri Hulu,11.92
+Kabupaten Bengkalis,14.18
+Kabupaten Indragiri Hilir,11.71
+Kabupaten Pelalawan,17.97
+Kabupaten Rokan Hulu,8.94
+Kabupaten Rokan Hilir,6.08
+Kabupaten Siak,7.28
+Kabupaten Kuantan Singingi,11.1
+Kabupaten Kepulauan Meranti,13.74
+Kota Pekanbaru,18.48
+Kota Dumai,1.88
+Kabupaten Kerinci,12.32
+Kabupaten Merangin,14.19
+Kabupaten Sarolangun,11.03
+Kabupaten Batanghari,4.59
+Kabupaten Muaro Jambi,16.17
+Kabupaten Tanjung Jabung Barat,15.81
+Kabupaten Tanjung Jabung Timur,19.16
+Kabupaten Bungo,15.91
+Kabupaten Tebo,7.28
+Kota Jambi,1.34
+Kota Sungai Penuh,2.59
+Kabupaten Ogan Komering Ulu,17.02
+Kabupaten Ogan Komering Ilir,8.78
+Kabupaten Muara Enim,17.59
+Kabupaten Lahat,5.11
+Kabupaten Musi Rawas,18.36
+Kabupaten Musi Banyuasin,13.2
+Kabupaten Banyuasin,16.13
+Kabupaten Ogan Komering Ulu Timur,12.18
+Kabupaten Ogan Komering Ulu Selatan,15.05
+Kabupaten Ogan Ilir,13.27
+Kabupaten Empat Lawang,9.44
+Kabupaten Penukal Abab Lematang Ilir,11.83
+Kabupaten Musi Rawas Utara,18.32
+Kota Palembang,11.51
+Kota Pagar Alam,15.63
+Kota Lubuk Linggau,17.86
+Kota Prabumulih,7.13
+Kabupaten Bengkulu Selatan,12.06
+Kabupaten Rejang Lebong,3.22
+Kabupaten Bengkulu Utara,14.16
+Kabupaten Kaur,12.35
+Kabupaten Seluma,6.76
+Kabupaten Mukomuko,16.63
+Kabupaten Lebong,17.29
+Kabupaten Kepahiang,19.84
+Kabupaten Bengkulu Tengah,5.43
+Kota Bengkulu,14.13
+Kabupaten Lampung Selatan,17.86
+Kabupaten Lampung Tengah,14.41
+Kabupaten Lampung Utara,2.3
+Kabupaten Lampung Barat,14.94
+Kabupaten Tulang Bawang,5.64
+Kabupaten Tanggamus,16.01
+Kabupaten Lampung Timur,2.05
+Kabupaten Way Kanan,13.86
+Kabupaten Pesawaran,5.2
+Kabupaten Pringsewu,15.98
+Kabupaten Mesuji,12.03
+Kabupaten Tulang Bawang Barat,16.68
+Kabupaten Pesisir Barat,6.04
+Kota Bandar Lampung,9.81
+Kota Metro,16.7
+Kabupaten Bangka,13.69
+Kabupaten Belitung,19.99
+Kabupaten Bangka Selatan,5.12
+Kabupaten Bangka Tengah,16.14
+Kabupaten Bangka Barat,7.86
+Kabupaten Belitung Timur,1.35
+Kota Pangkal Pinang,16.69
+Kabupaten Bintan,6.06
+Kabupaten Karimun,4.56
+Kabupaten Natuna,2.14
+Kabupaten Lingga,8.51
+Kabupaten Kepulauan Anambas,6.63
+Kota Batam,8.34
+Kota Tanjung Pinang,7.03
+Kabupaten Administrasi Kepulauan Seribu,11.57
+Kota Administrasi Jakarta Pusat,17.32
+Kota Administrasi Jakarta Utara ,1.36
+Kota Administrasi Jakarta Barat,14.92
+Kota Administrasi Jakarta Selatan,17.03
+Kota Administrasi Jakarta Timur,8.78
+Kabupaten Bogor,9.98
+Kabupaten Sukabumi,13.97
+Kabupaten Cianjur,11.2
+Kabupaten Bandung,4.99
+Kabupaten Garut,1.15
+Kabupaten Tasikmalaya,9.72
+Kabupaten Ciamis,10.25
+Kabupaten Kuningan,7.51
+Kabupaten Cirebon,7.61
+Kabupaten Majalengka,16.45
+Kabupaten Sumedang,13.27
+Kabupaten Indramayu,6.14
+Kabupaten Subang,14.08
+Kabupaten Purwakarta,17.09
+Kabupaten Karawang,9.7
+Kabupaten Bekasi,3.34
+Kabupaten Bandung Barat,19.51
+Kabupaten Pangandaran,17.51
+Kota Bogor,9.36
+Kota Sukabumi,14.25
+Kota Bandung,17.6
+Kota Cirebon,2.47
+Kota Bekasi,8.23
+Kota Depok,12.39
+Kota Cimahi,17.49
+Kota Tasikmalaya,1.88
+Kota Banjar,12.96
+Kabupaten Cilacap,6.7
+Kabupaten Banyumas,19.86
+Kabupaten Purbalingga,6.19
+Kabupaten Banjarnegara,4.61
+Kabupaten Kebumen,14.61
+Kabupaten Purworejo,8.35
+Kabupaten Wonosobo,15.56
+Kabupaten Magelang,18.71
+Kabupaten Boyolali,9.22
+Kabupaten Klaten,8.79
+Kabupaten Sukoharjo,3.32
+Kabupaten Wonogiri,6.93
+Kabupaten Karanganyar,19.25
+Kabupaten Sragen,19.13
+Kabupaten Grobogan,8.52
+Kabupaten Blora,18.12
+Kabupaten Rembang,9.81
+Kabupaten Pati,8.85
+Kabupaten Kudus,5.21
+Kabupaten Jepara,9.3
+Kabupaten Demak,5.51
+Kabupaten Semarang,9.33
+Kabupaten Temanggung,4.2
+Kabupaten Kendal,8.05
+Kabupaten Batang,10.1
+Kabupaten Pekalongan,3.28
+Kabupaten Pemalang,11.37
+Kabupaten Tegal,8.44
+Kabupaten Brebes,13.34
+Kota Magelang,3.03
+Kota Surakarta,9.8
+Kota Salatiga,8.91
+Kota Semarang,3.7
+Kota Pekalongan,1.87
+Kota Tegal,14.88
+Kabupaten Kulon Progo,17.6
+Kabupaten Bantul,9.69
+Kabupaten Gunungkidul,5.78
+Kabupaten Sleman,12.77
+Kota Yogyakarta,3.07
+Kabupaten Pacitan,19.41
+Kabupaten Ponorogo,16.45
+Kabupaten Trenggalek,16.78
+Kabupaten Tulungagung,11.26
+Kabupaten Blitar,14.98
+Kabupaten Kediri,4.82
+Kabupaten Malang,4.31
+Kabupaten Lumajang,10.08
+Kabupaten Jember,12.37
+Kabupaten Banyuwangi,19.75
+Kabupaten Bondowoso,19.16
+Kabupaten Situbondo,10.36
+Kabupaten Probolinggo,10.2
+Kabupaten Pasuruan,13.19
+Kabupaten Sidoarjo,8.92
+Kabupaten Mojokerto,4.66
+Kabupaten Jombang,7.47
+Kabupaten Nganjuk,6.95
+Kabupaten Madiun,9.43
+Kabupaten Magetan,14.4
+Kabupaten Ngawi,11.47
+Kabupaten Bojonegoro,5.33
+Kabupaten Tuban,3.58
+Kabupaten Lamongan,2.06
+Kabupaten Gresik,17.14
+Kabupaten Bangkalan,6.46
+Kabupaten Sampang,2.69
+Kabupaten Pamekasan,9.59
+Kabupaten Sumenep,10.27
+Kota Kediri,4.92
+Kota Blitar,8.16
+Kota Malang,6.37
+Kota Probolinggo,18.46
+Kota Pasuruan,19.77
+Kota Mojokerto,16.42
+Kota Madiun,5.61
+Kota Surabaya,13.8
+Kota Batu,13.45
+Kabupaten Pandeglang,8.96
+Kabupaten Lebak,3.41
+Kabupaten Tangerang,9.88
+Kabupaten Serang,14.65
+Kota Tangerang,1.88
+Kota Cilegon,18.14
+Kota Serang,16.04
+Kota Tangerang Selatan,13.21
+Kabupaten Jembrana,18.48
+Kabupaten Tabanan,2.65
+Kabupaten Badung,3.06
+Kabupaten Gianyar,5.73
+Kabupaten Klungkung,17.22
+Kabupaten Bangli,6.54
+Kabupaten Karangasem,4.92
+Kabupaten Buleleng,9.62
+Kota Denpasar,5.86
+Kabupaten Lombok Barat,4.61
+Kabupaten Lombok Tengah,16.56
+Kabupaten Lombok Timur,18.54
+Kabupaten Sumbawa,2.84
+Kabupaten Dompu,10.62
+Kabupaten Bima,1.53
+Kabupaten Sumbawa Barat,13.89
+Kabupaten Lombok Utara,5.26
+Kota Mataram,2.11
+Kota Bima,18.02
+Kabupaten Kupang,13.15
+Kabupaten Timor Tengah Selatan,2.04
+Kabupaten Timor Tengah Utara,7.65
+Kabupaten Belu,3.39
+Kabupaten Alor,6.77
+Kabupaten Flores Timur,1.68
+Kabupaten Sikka,18.88
+Kabupaten Ende,13.94
+Kabupaten Ngada,8.93
+Kabupaten Manggarai,12.96
+Kabupaten Sumba Timur,19.08
+Kabupaten Sumba Barat,1.57
+Kabupaten Lembata,18.42
+Kabupaten Rote Ndao,5.06
+Kabupaten Manggarai Barat,13.45
+Kabupaten Nagekeo,17.68
+Kabupaten Sumba Tengah,16.16
+Kabupaten Sumba Barat Daya,7.36
+Kabupaten Manggarai Timur,9.99
+Kabupaten Sabu Raijua,9.85
+Kabupaten Malaka,6.7
+Kota Kupang,7.3
+Kabupaten Sambas,11.28
+Kabupaten Mempawah,3.0
+Kabupaten Sanggau,18.9
+Kabupaten Ketapang,5.49
+Kabupaten Sintang,4.21
+Kabupaten Kapuas Hulu,17.47
+Kabupaten Bengkayang,2.06
+Kabupaten Landak,3.59
+Kabupaten Sekadau,15.06
+Kabupaten Melawi,15.16
+Kabupaten Kayong Utara,8.35
+Kabupaten Kubu Raya,6.96
+Kota Pontianak,16.46
+Kota Singkawang,4.35
+Kabupaten Kotawaringin Barat,10.83
+Kabupaten Kotawaringin Timur,18.16
+Kabupaten Kapuas,14.7
+Kabupaten Barito Selatan,18.04
+Kabupaten Barito Utara,11.03
+Kabupaten Katingan,5.52
+Kabupaten Seruyan,8.64
+Kabupaten Sukamara,19.77
+Kabupaten Lamandau,7.03
+Kabupaten Gunung Mas,16.68
+Kabupaten Pulang Pisau,4.62
+Kabupaten Murung Raya,6.89
+Kabupaten Barito Timur,1.84
+Kota Palangkaraya,3.96
+Kabupaten Tanah Laut,15.87
+Kabupaten Kotabaru,13.91
+Kabupaten Banjar,12.11
+Kabupaten Barito Kuala,12.44
+Kabupaten Tapin,5.2
+Kabupaten Hulu Sungai Selatan,18.39
+Kabupaten Hulu Sungai Tengah,2.8
+Kabupaten Hulu Sungai Utara,15.02
+Kabupaten Tabalong,9.74
+Kabupaten Tanah Bumbu,11.29
+Kabupaten Balangan,6.45
+Kota Banjarmasin,2.67
+Kota Banjarbaru,10.27
+Kabupaten Paser,17.32
+Kabupaten Kutai Kartanegara,2.02
+Kabupaten Berau,18.28
+Kabupaten Kutai Barat,3.5
+Kabupaten Kutai Timur,9.65
+Kabupaten Penajam Paser Utara,5.55
+Kabupaten Mahakam Ulu,1.34
+Kota Balikpapan,5.11
+Kota Samarinda,18.18
+Kota Bontang,15.61
+Kabupaten Bulungan,14.97
+Kabupaten Malinau,16.44
+Kabupaten Nunukan,16.42
+Kabupaten Tana Tidung,12.23
+Kota Tarakan,2.91
+Kabupaten Bolaang Mongondow,14.14
+Kabupaten Minahasa,19.89
+Kabupaten Kepulauan Sangihe,6.55
+Kabupaten Kepulauan Talaud,12.43
+Kabupaten Minahasa Selatan,11.76
+Kabupaten Minahasa Utara,18.49
+Kabupaten Minahasa Tenggara,7.48
+Kabupaten Bolaang Mongondow Utara,19.71
+Kabupaten Kep. Siau Tagulandang Biaro,11.32
+Kabupaten Bolaang Mongondow Timur,1.22
+Kabupaten Bolaang Mongondow Selatan,1.52
+Kota Manado,5.99
+Kota Bitung,8.25
+Kota Tomohon,18.41
+Kota Kotamobagu,14.69
+Kabupaten Banggai,17.54
+Kabupaten Poso,17.65
+Kabupaten Donggala,3.65
+Kabupaten Toli-Toli,9.12
+Kabupaten Buol,9.45
+Kabupaten Morowali,11.91
+Kabupaten Banggai Kepulauan,2.4
+Kabupaten Parigi Moutong,6.74
+Kabupaten Tojo Una Una,19.51
+Kabupaten Sigi,9.2
+Kabupaten Banggai Laut,19.2
+Kabupaten Morowali Utara,9.03
+Kota Palu,2.59
+Kabupaten Kepulauan Selayar,10.31
+Kabupaten Bulukumba,19.64
+Kabupaten Bantaeng,9.54
+Kabupaten Jeneponto,2.96
+Kabupaten Takalar,5.96
+Kabupaten Gowa,8.76
+Kabupaten Sinjai,11.68
+Kabupaten Bone,18.79
+Kabupaten Maros,15.49
+Kabupaten Pangkajene dan Kepulauan,16.97
+Kabupaten Barru,4.08
+Kabupaten Soppeng,15.87
+Kabupaten Wajo,5.58
+Kabupaten Sidenreng Rappang,10.87
+Kabupaten Pinrang,16.57
+Kabupaten Enrekang,8.05
+Kabupaten Luwu,6.13
+Kabupaten Tana Toraja,8.97
+Kabupaten Luwu Utara,4.15
+Kabupaten Luwu Timur,12.0
+Kabupaten Toraja Utara,13.48
+Kota Makassar,5.05
+Kota Parepare,17.92
+Kota Palopo,2.12
+Kabupaten Kolaka,2.1
+Kabupaten Konawe,10.39
+Kabupaten Muna,11.66
+Kabupaten Buton,18.31
+Kabupaten Konawe Selatan,16.88
+Kabupaten Bombana,15.48
+Kabupaten Wakatobi,8.12
+Kabupaten Kolaka Utara,13.92
+Kabupaten Konawe Utara,14.99
+Kabupaten Buton Utara,18.09
+Kabupaten Kolaka Timur,10.39
+Kabupaten Konawe Kepulauan,17.42
+Kabupaten Muna Barat,14.76
+Kabupaten Buton Tengah,13.41
+Kabupaten Buton Selatan,5.68
+Kota Kendari,4.13
+Kota Bau Bau,15.61
+Kabupaten Gorontalo,8.97
+Kabupaten Boalemo,16.44
+Kabupaten Bone Bolango,5.66
+Kabupaten Pohuwato,13.28
+Kabupaten Gorontalo Utara,15.77
+Kota Gorontalo,18.61
+Kabupaten Pasangkayu,4.11
+Kabupaten Mamuju,15.59
+Kabupaten Mamasa,16.18
+Kabupaten Polewali Mandar,6.34
+Kabupaten Majene,5.46
+Kabupaten Mamuju Tengah,6.51
+Kabupaten Maluku Tengah,8.44
+Kabupaten Maluku Tenggara,18.49
+Kabupaten Kepulauan Tanimbar,16.67
+Kabupaten Buru,4.44
+Kabupaten Seram Bagian Timur,12.46
+Kabupaten Seram Bagian Barat,16.91
+Kabupaten Kepulauan Aru,1.16
+Kabupaten Maluku Barat Daya,14.82
+Kabupaten Buru Selatan,8.82
+Kota Ambon,6.93
+Kota Tual,4.19
+Kabupaten Halmahera Barat,14.36
+Kabupaten Halmahera Tengah,19.61
+Kabupaten Halmahera Utara,15.93
+Kabupaten Halmahera Selatan,11.68
+Kabupaten Kepulauan Sula,9.44
+Kabupaten Halmahera Timur,8.67
+Kabupaten Pulau Morotai,19.91
+Kabupaten Pulau Taliabu,18.32
+Kota Ternate,3.47
+Kota Tidore Kepulauan,6.75
+Kabupaten Jayapura,15.34
+Kabupaten Kepulauan Yapen,8.08
+Kabupaten Biak Numfor,19.66
+Kabupaten Sarmi,8.43
+Kabupaten Keerom,14.95
+Kabupaten Waropen,13.16
+Kabupaten Supiori,8.36
+Kabupaten Mamberamo Raya,12.49
+Kota Jayapura,10.34
+Kabupaten Manokwari,17.7
+Kabupaten Fak Fak,18.41
+Kabupaten Teluk Bintuni,17.66
+Kabupaten Teluk Wondama,1.83
+Kabupaten Kaimana,14.35
+Kabupaten Manokwari Selatan,18.21
+Kabupaten Pegunungan Arfak,15.62
+Kabupaten Merauke,12.29
+Kabupaten Boven Digoel,14.41
+Kabupaten Mappi,5.96
+Kabupaten Asmat,11.22
+Kabupaten Nabire,6.19
+Kabupaten Puncak Jaya,1.77
+Kabupaten Paniai,16.13
+Kabupaten Mimika,18.35
+Kabupaten Puncak,7.05
+Kabupaten Dogiyai,8.88
+Kabupaten Intan Jaya,1.3
+Kabupaten Deiyai,11.27
+Kabupaten Jayawijaya,8.2
+Kabupaten Pegunungan Bintang,7.88
+Kabupaten Yahukimo,11.13
+Kabupaten Tolikara,3.56
+Kabupaten Mamberamo Tengah,19.6
+Kabupaten Yalimo,2.65
+Kabupaten Lanny Jaya,10.94
+Kabupaten Nduga,7.26
+Kabupaten Sorong,14.95
+Kabupaten Sorong Selatan,14.59
+Kabupaten Raja Ampat,17.37
+Kabupaten Tambrauw,12.06
+Kabupaten Maybrat,4.21
+Kota Sorong,5.69

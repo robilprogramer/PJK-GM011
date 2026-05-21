@@ -1,0 +1,515 @@
+city,soil_type,soil_type_encoded
+Kabupaten Aceh Selatan,sandy,4
+Kabupaten Aceh Tenggara,sandy,4
+Kabupaten Aceh Timur,alluvial,0
+Kabupaten Aceh Tengah,alluvial,0
+Kabupaten Aceh Barat,sandy,4
+Kabupaten Aceh Besar,loam,2
+Kabupaten Pidie,loam,2
+Kabupaten Aceh Utara,clay,1
+Kabupaten Simeulue,sandy,4
+Kabupaten Aceh Singkil,clay,1
+Kabupaten Bireuen,peat,3
+Kabupaten Aceh Barat Daya,loam,2
+Kabupaten Gayo Lues,alluvial,0
+Kabupaten Aceh Jaya,peat,3
+Kabupaten Nagan Raya,sandy,4
+Kabupaten Aceh Tamiang,clay,1
+Kabupaten Bener Meriah,alluvial,0
+Kabupaten Pidie Jaya,sandy,4
+Kota Banda Aceh,alluvial,0
+Kota Sabang,sandy,4
+Kota Lhokseumawe,clay,1
+Kota Langsa,loam,2
+Kota Subulussalam,peat,3
+Kabupaten Tapanuli Tengah,clay,1
+Kabupaten Tapanuli Utara,peat,3
+Kabupaten Tapanuli Selatan,sandy,4
+Kabupaten Nias,peat,3
+Kabupaten Langkat,clay,1
+Kabupaten Karo,peat,3
+Kabupaten Deli Serdang,alluvial,0
+Kabupaten Simalungun,clay,1
+Kabupaten Asahan,sandy,4
+Kabupaten Labuhanbatu,alluvial,0
+Kabupaten Dairi,loam,2
+Kabupaten Toba,sandy,4
+Kabupaten Mandailing Natal,alluvial,0
+Kabupaten Nias Selatan,clay,1
+Kabupaten Pakpak Bharat,loam,2
+Kabupaten Humbang Hasundutan,alluvial,0
+Kabupaten Samosir,loam,2
+Kabupaten Serdang Bedagai,sandy,4
+Kabupaten Batu Bara,clay,1
+Kabupaten Padang Lawas Utara,peat,3
+Kabupaten Padang Lawas,alluvial,0
+Kabupaten Labuhanbatu Selatan,clay,1
+Kabupaten Labuhanbatu Utara,peat,3
+Kabupaten Nias Utara,alluvial,0
+Kabupaten Nias Barat,sandy,4
+Kota Medan,peat,3
+Kota Pematangsiantar,alluvial,0
+Kota Sibolga,sandy,4
+Kota Tanjungbalai,clay,1
+Kota Binjai,alluvial,0
+Kota Tebing Tinggi,clay,1
+Kota Padangsidimpuan,sandy,4
+Kota Gunungsitoli,peat,3
+Kabupaten Pesisir Selatan,clay,1
+Kabupaten Solok,sandy,4
+Kabupaten Sijunjung,peat,3
+Kabupaten Tanah Datar,sandy,4
+Kabupaten Padang Pariaman,clay,1
+Kabupaten Agam,loam,2
+Kabupaten Lima Puluh Kota,peat,3
+Kabupaten Pasaman,alluvial,0
+Kabupaten Kepulauan Mentawai,loam,2
+Kabupaten Dharmasraya,clay,1
+Kabupaten Solok Selatan,loam,2
+Kabupaten Pasaman Barat,alluvial,0
+Kota Padang,sandy,4
+Kota Solok,peat,3
+Kota Sawahlunto,alluvial,0
+Kota Padang Panjang,clay,1
+Kota Bukittinggi,sandy,4
+Kota Payakumbuh,sandy,4
+Kota Pariaman,alluvial,0
+Kabupaten Kampar,sandy,4
+Kabupaten Indragiri Hulu,loam,2
+Kabupaten Bengkalis,peat,3
+Kabupaten Indragiri Hilir,clay,1
+Kabupaten Pelalawan,sandy,4
+Kabupaten Rokan Hulu,clay,1
+Kabupaten Rokan Hilir,clay,1
+Kabupaten Siak,loam,2
+Kabupaten Kuantan Singingi,sandy,4
+Kabupaten Kepulauan Meranti,clay,1
+Kota Pekanbaru,alluvial,0
+Kota Dumai,loam,2
+Kabupaten Kerinci,peat,3
+Kabupaten Merangin,loam,2
+Kabupaten Sarolangun,peat,3
+Kabupaten Batanghari,sandy,4
+Kabupaten Muaro Jambi,loam,2
+Kabupaten Tanjung Jabung Barat,peat,3
+Kabupaten Tanjung Jabung Timur,clay,1
+Kabupaten Bungo,loam,2
+Kabupaten Tebo,peat,3
+Kota Jambi,alluvial,0
+Kota Sungai Penuh,peat,3
+Kabupaten Ogan Komering Ulu,loam,2
+Kabupaten Ogan Komering Ilir,clay,1
+Kabupaten Muara Enim,alluvial,0
+Kabupaten Lahat,peat,3
+Kabupaten Musi Rawas,loam,2
+Kabupaten Musi Banyuasin,peat,3
+Kabupaten Banyuasin,peat,3
+Kabupaten Ogan Komering Ulu Timur,clay,1
+Kabupaten Ogan Komering Ulu Selatan,clay,1
+Kabupaten Ogan Ilir,loam,2
+Kabupaten Empat Lawang,peat,3
+Kabupaten Penukal Abab Lematang Ilir,alluvial,0
+Kabupaten Musi Rawas Utara,sandy,4
+Kota Palembang,clay,1
+Kota Pagar Alam,alluvial,0
+Kota Lubuk Linggau,alluvial,0
+Kota Prabumulih,sandy,4
+Kabupaten Bengkulu Selatan,loam,2
+Kabupaten Rejang Lebong,alluvial,0
+Kabupaten Bengkulu Utara,loam,2
+Kabupaten Kaur,loam,2
+Kabupaten Seluma,clay,1
+Kabupaten Mukomuko,sandy,4
+Kabupaten Lebong,sandy,4
+Kabupaten Kepahiang,clay,1
+Kabupaten Bengkulu Tengah,clay,1
+Kota Bengkulu,clay,1
+Kabupaten Lampung Selatan,loam,2
+Kabupaten Lampung Tengah,clay,1
+Kabupaten Lampung Utara,sandy,4
+Kabupaten Lampung Barat,clay,1
+Kabupaten Tulang Bawang,alluvial,0
+Kabupaten Tanggamus,clay,1
+Kabupaten Lampung Timur,alluvial,0
+Kabupaten Way Kanan,alluvial,0
+Kabupaten Pesawaran,sandy,4
+Kabupaten Pringsewu,alluvial,0
+Kabupaten Mesuji,sandy,4
+Kabupaten Tulang Bawang Barat,sandy,4
+Kabupaten Pesisir Barat,sandy,4
+Kota Bandar Lampung,peat,3
+Kota Metro,peat,3
+Kabupaten Bangka,alluvial,0
+Kabupaten Belitung,sandy,4
+Kabupaten Bangka Selatan,loam,2
+Kabupaten Bangka Tengah,sandy,4
+Kabupaten Bangka Barat,alluvial,0
+Kabupaten Belitung Timur,loam,2
+Kota Pangkal Pinang,clay,1
+Kabupaten Bintan,alluvial,0
+Kabupaten Karimun,clay,1
+Kabupaten Natuna,loam,2
+Kabupaten Lingga,sandy,4
+Kabupaten Kepulauan Anambas,alluvial,0
+Kota Batam,clay,1
+Kota Tanjung Pinang,peat,3
+Kabupaten Administrasi Kepulauan Seribu,loam,2
+Kota Administrasi Jakarta Pusat,sandy,4
+Kota Administrasi Jakarta Utara ,peat,3
+Kota Administrasi Jakarta Barat,alluvial,0
+Kota Administrasi Jakarta Selatan,sandy,4
+Kota Administrasi Jakarta Timur,loam,2
+Kabupaten Bogor,loam,2
+Kabupaten Sukabumi,sandy,4
+Kabupaten Cianjur,alluvial,0
+Kabupaten Bandung,alluvial,0
+Kabupaten Garut,clay,1
+Kabupaten Tasikmalaya,loam,2
+Kabupaten Ciamis,loam,2
+Kabupaten Kuningan,alluvial,0
+Kabupaten Cirebon,alluvial,0
+Kabupaten Majalengka,clay,1
+Kabupaten Sumedang,alluvial,0
+Kabupaten Indramayu,alluvial,0
+Kabupaten Subang,clay,1
+Kabupaten Purwakarta,peat,3
+Kabupaten Karawang,sandy,4
+Kabupaten Bekasi,sandy,4
+Kabupaten Bandung Barat,peat,3
+Kabupaten Pangandaran,clay,1
+Kota Bogor,clay,1
+Kota Sukabumi,peat,3
+Kota Bandung,peat,3
+Kota Cirebon,alluvial,0
+Kota Bekasi,clay,1
+Kota Depok,clay,1
+Kota Cimahi,peat,3
+Kota Tasikmalaya,clay,1
+Kota Banjar,alluvial,0
+Kabupaten Cilacap,sandy,4
+Kabupaten Banyumas,alluvial,0
+Kabupaten Purbalingga,clay,1
+Kabupaten Banjarnegara,loam,2
+Kabupaten Kebumen,alluvial,0
+Kabupaten Purworejo,loam,2
+Kabupaten Wonosobo,alluvial,0
+Kabupaten Magelang,peat,3
+Kabupaten Boyolali,alluvial,0
+Kabupaten Klaten,loam,2
+Kabupaten Sukoharjo,clay,1
+Kabupaten Wonogiri,loam,2
+Kabupaten Karanganyar,loam,2
+Kabupaten Sragen,clay,1
+Kabupaten Grobogan,peat,3
+Kabupaten Blora,loam,2
+Kabupaten Rembang,loam,2
+Kabupaten Pati,peat,3
+Kabupaten Kudus,alluvial,0
+Kabupaten Jepara,loam,2
+Kabupaten Demak,sandy,4
+Kabupaten Semarang,loam,2
+Kabupaten Temanggung,sandy,4
+Kabupaten Kendal,clay,1
+Kabupaten Batang,clay,1
+Kabupaten Pekalongan,sandy,4
+Kabupaten Pemalang,clay,1
+Kabupaten Tegal,peat,3
+Kabupaten Brebes,loam,2
+Kota Magelang,peat,3
+Kota Surakarta,peat,3
+Kota Salatiga,clay,1
+Kota Semarang,alluvial,0
+Kota Pekalongan,clay,1
+Kota Tegal,clay,1
+Kabupaten Kulon Progo,clay,1
+Kabupaten Bantul,clay,1
+Kabupaten Gunungkidul,clay,1
+Kabupaten Sleman,alluvial,0
+Kota Yogyakarta,loam,2
+Kabupaten Pacitan,clay,1
+Kabupaten Ponorogo,peat,3
+Kabupaten Trenggalek,clay,1
+Kabupaten Tulungagung,loam,2
+Kabupaten Blitar,clay,1
+Kabupaten Kediri,sandy,4
+Kabupaten Malang,sandy,4
+Kabupaten Lumajang,sandy,4
+Kabupaten Jember,alluvial,0
+Kabupaten Banyuwangi,loam,2
+Kabupaten Bondowoso,peat,3
+Kabupaten Situbondo,loam,2
+Kabupaten Probolinggo,alluvial,0
+Kabupaten Pasuruan,peat,3
+Kabupaten Sidoarjo,peat,3
+Kabupaten Mojokerto,sandy,4
+Kabupaten Jombang,loam,2
+Kabupaten Nganjuk,loam,2
+Kabupaten Madiun,loam,2
+Kabupaten Magetan,loam,2
+Kabupaten Ngawi,loam,2
+Kabupaten Bojonegoro,peat,3
+Kabupaten Tuban,peat,3
+Kabupaten Lamongan,alluvial,0
+Kabupaten Gresik,peat,3
+Kabupaten Bangkalan,clay,1
+Kabupaten Sampang,alluvial,0
+Kabupaten Pamekasan,sandy,4
+Kabupaten Sumenep,loam,2
+Kota Kediri,sandy,4
+Kota Blitar,clay,1
+Kota Malang,alluvial,0
+Kota Probolinggo,peat,3
+Kota Pasuruan,alluvial,0
+Kota Mojokerto,sandy,4
+Kota Madiun,clay,1
+Kota Surabaya,peat,3
+Kota Batu,clay,1
+Kabupaten Pandeglang,peat,3
+Kabupaten Lebak,clay,1
+Kabupaten Tangerang,loam,2
+Kabupaten Serang,peat,3
+Kota Tangerang,loam,2
+Kota Cilegon,loam,2
+Kota Serang,peat,3
+Kota Tangerang Selatan,clay,1
+Kabupaten Jembrana,peat,3
+Kabupaten Tabanan,alluvial,0
+Kabupaten Badung,alluvial,0
+Kabupaten Gianyar,loam,2
+Kabupaten Klungkung,clay,1
+Kabupaten Bangli,clay,1
+Kabupaten Karangasem,peat,3
+Kabupaten Buleleng,loam,2
+Kota Denpasar,sandy,4
+Kabupaten Lombok Barat,clay,1
+Kabupaten Lombok Tengah,clay,1
+Kabupaten Lombok Timur,sandy,4
+Kabupaten Sumbawa,loam,2
+Kabupaten Dompu,peat,3
+Kabupaten Bima,sandy,4
+Kabupaten Sumbawa Barat,clay,1
+Kabupaten Lombok Utara,loam,2
+Kota Mataram,sandy,4
+Kota Bima,clay,1
+Kabupaten Kupang,sandy,4
+Kabupaten Timor Tengah Selatan,alluvial,0
+Kabupaten Timor Tengah Utara,peat,3
+Kabupaten Belu,alluvial,0
+Kabupaten Alor,alluvial,0
+Kabupaten Flores Timur,peat,3
+Kabupaten Sikka,sandy,4
+Kabupaten Ende,alluvial,0
+Kabupaten Ngada,peat,3
+Kabupaten Manggarai,peat,3
+Kabupaten Sumba Timur,alluvial,0
+Kabupaten Sumba Barat,peat,3
+Kabupaten Lembata,peat,3
+Kabupaten Rote Ndao,clay,1
+Kabupaten Manggarai Barat,alluvial,0
+Kabupaten Nagekeo,loam,2
+Kabupaten Sumba Tengah,peat,3
+Kabupaten Sumba Barat Daya,alluvial,0
+Kabupaten Manggarai Timur,clay,1
+Kabupaten Sabu Raijua,alluvial,0
+Kabupaten Malaka,alluvial,0
+Kota Kupang,clay,1
+Kabupaten Sambas,sandy,4
+Kabupaten Mempawah,loam,2
+Kabupaten Sanggau,alluvial,0
+Kabupaten Ketapang,alluvial,0
+Kabupaten Sintang,alluvial,0
+Kabupaten Kapuas Hulu,sandy,4
+Kabupaten Bengkayang,sandy,4
+Kabupaten Landak,clay,1
+Kabupaten Sekadau,clay,1
+Kabupaten Melawi,alluvial,0
+Kabupaten Kayong Utara,peat,3
+Kabupaten Kubu Raya,sandy,4
+Kota Pontianak,alluvial,0
+Kota Singkawang,loam,2
+Kabupaten Kotawaringin Barat,clay,1
+Kabupaten Kotawaringin Timur,peat,3
+Kabupaten Kapuas,clay,1
+Kabupaten Barito Selatan,peat,3
+Kabupaten Barito Utara,clay,1
+Kabupaten Katingan,alluvial,0
+Kabupaten Seruyan,loam,2
+Kabupaten Sukamara,sandy,4
+Kabupaten Lamandau,peat,3
+Kabupaten Gunung Mas,clay,1
+Kabupaten Pulang Pisau,loam,2
+Kabupaten Murung Raya,alluvial,0
+Kabupaten Barito Timur,alluvial,0
+Kota Palangkaraya,sandy,4
+Kabupaten Tanah Laut,peat,3
+Kabupaten Kotabaru,clay,1
+Kabupaten Banjar,alluvial,0
+Kabupaten Barito Kuala,sandy,4
+Kabupaten Tapin,alluvial,0
+Kabupaten Hulu Sungai Selatan,loam,2
+Kabupaten Hulu Sungai Tengah,loam,2
+Kabupaten Hulu Sungai Utara,loam,2
+Kabupaten Tabalong,alluvial,0
+Kabupaten Tanah Bumbu,sandy,4
+Kabupaten Balangan,clay,1
+Kota Banjarmasin,sandy,4
+Kota Banjarbaru,alluvial,0
+Kabupaten Paser,clay,1
+Kabupaten Kutai Kartanegara,sandy,4
+Kabupaten Berau,loam,2
+Kabupaten Kutai Barat,alluvial,0
+Kabupaten Kutai Timur,sandy,4
+Kabupaten Penajam Paser Utara,clay,1
+Kabupaten Mahakam Ulu,peat,3
+Kota Balikpapan,peat,3
+Kota Samarinda,sandy,4
+Kota Bontang,clay,1
+Kabupaten Bulungan,peat,3
+Kabupaten Malinau,clay,1
+Kabupaten Nunukan,peat,3
+Kabupaten Tana Tidung,loam,2
+Kota Tarakan,peat,3
+Kabupaten Bolaang Mongondow,sandy,4
+Kabupaten Minahasa,loam,2
+Kabupaten Kepulauan Sangihe,loam,2
+Kabupaten Kepulauan Talaud,loam,2
+Kabupaten Minahasa Selatan,loam,2
+Kabupaten Minahasa Utara,alluvial,0
+Kabupaten Minahasa Tenggara,alluvial,0
+Kabupaten Bolaang Mongondow Utara,loam,2
+Kabupaten Kep. Siau Tagulandang Biaro,loam,2
+Kabupaten Bolaang Mongondow Timur,sandy,4
+Kabupaten Bolaang Mongondow Selatan,clay,1
+Kota Manado,loam,2
+Kota Bitung,clay,1
+Kota Tomohon,alluvial,0
+Kota Kotamobagu,peat,3
+Kabupaten Banggai,peat,3
+Kabupaten Poso,peat,3
+Kabupaten Donggala,clay,1
+Kabupaten Toli-Toli,sandy,4
+Kabupaten Buol,clay,1
+Kabupaten Morowali,sandy,4
+Kabupaten Banggai Kepulauan,alluvial,0
+Kabupaten Parigi Moutong,sandy,4
+Kabupaten Tojo Una Una,alluvial,0
+Kabupaten Sigi,peat,3
+Kabupaten Banggai Laut,sandy,4
+Kabupaten Morowali Utara,clay,1
+Kota Palu,clay,1
+Kabupaten Kepulauan Selayar,peat,3
+Kabupaten Bulukumba,sandy,4
+Kabupaten Bantaeng,peat,3
+Kabupaten Jeneponto,sandy,4
+Kabupaten Takalar,clay,1
+Kabupaten Gowa,loam,2
+Kabupaten Sinjai,peat,3
+Kabupaten Bone,peat,3
+Kabupaten Maros,clay,1
+Kabupaten Pangkajene dan Kepulauan,peat,3
+Kabupaten Barru,clay,1
+Kabupaten Soppeng,alluvial,0
+Kabupaten Wajo,alluvial,0
+Kabupaten Sidenreng Rappang,alluvial,0
+Kabupaten Pinrang,alluvial,0
+Kabupaten Enrekang,alluvial,0
+Kabupaten Luwu,alluvial,0
+Kabupaten Tana Toraja,peat,3
+Kabupaten Luwu Utara,sandy,4
+Kabupaten Luwu Timur,alluvial,0
+Kabupaten Toraja Utara,alluvial,0
+Kota Makassar,loam,2
+Kota Parepare,sandy,4
+Kota Palopo,peat,3
+Kabupaten Kolaka,peat,3
+Kabupaten Konawe,clay,1
+Kabupaten Muna,alluvial,0
+Kabupaten Buton,peat,3
+Kabupaten Konawe Selatan,clay,1
+Kabupaten Bombana,loam,2
+Kabupaten Wakatobi,clay,1
+Kabupaten Kolaka Utara,alluvial,0
+Kabupaten Konawe Utara,alluvial,0
+Kabupaten Buton Utara,loam,2
+Kabupaten Kolaka Timur,sandy,4
+Kabupaten Konawe Kepulauan,peat,3
+Kabupaten Muna Barat,alluvial,0
+Kabupaten Buton Tengah,peat,3
+Kabupaten Buton Selatan,alluvial,0
+Kota Kendari,peat,3
+Kota Bau Bau,clay,1
+Kabupaten Gorontalo,loam,2
+Kabupaten Boalemo,loam,2
+Kabupaten Bone Bolango,alluvial,0
+Kabupaten Pohuwato,sandy,4
+Kabupaten Gorontalo Utara,sandy,4
+Kota Gorontalo,clay,1
+Kabupaten Pasangkayu,peat,3
+Kabupaten Mamuju,clay,1
+Kabupaten Mamasa,peat,3
+Kabupaten Polewali Mandar,clay,1
+Kabupaten Majene,sandy,4
+Kabupaten Mamuju Tengah,loam,2
+Kabupaten Maluku Tengah,peat,3
+Kabupaten Maluku Tenggara,sandy,4
+Kabupaten Kepulauan Tanimbar,loam,2
+Kabupaten Buru,alluvial,0
+Kabupaten Seram Bagian Timur,clay,1
+Kabupaten Seram Bagian Barat,clay,1
+Kabupaten Kepulauan Aru,peat,3
+Kabupaten Maluku Barat Daya,sandy,4
+Kabupaten Buru Selatan,sandy,4
+Kota Ambon,alluvial,0
+Kota Tual,alluvial,0
+Kabupaten Halmahera Barat,sandy,4
+Kabupaten Halmahera Tengah,loam,2
+Kabupaten Halmahera Utara,loam,2
+Kabupaten Halmahera Selatan,peat,3
+Kabupaten Kepulauan Sula,sandy,4
+Kabupaten Halmahera Timur,alluvial,0
+Kabupaten Pulau Morotai,peat,3
+Kabupaten Pulau Taliabu,peat,3
+Kota Ternate,loam,2
+Kota Tidore Kepulauan,alluvial,0
+Kabupaten Jayapura,sandy,4
+Kabupaten Kepulauan Yapen,peat,3
+Kabupaten Biak Numfor,alluvial,0
+Kabupaten Sarmi,peat,3
+Kabupaten Keerom,clay,1
+Kabupaten Waropen,alluvial,0
+Kabupaten Supiori,peat,3
+Kabupaten Mamberamo Raya,sandy,4
+Kota Jayapura,sandy,4
+Kabupaten Manokwari,sandy,4
+Kabupaten Fak Fak,sandy,4
+Kabupaten Teluk Bintuni,alluvial,0
+Kabupaten Teluk Wondama,alluvial,0
+Kabupaten Kaimana,sandy,4
+Kabupaten Manokwari Selatan,loam,2
+Kabupaten Pegunungan Arfak,alluvial,0
+Kabupaten Merauke,sandy,4
+Kabupaten Boven Digoel,loam,2
+Kabupaten Mappi,clay,1
+Kabupaten Asmat,alluvial,0
+Kabupaten Nabire,loam,2
+Kabupaten Puncak Jaya,sandy,4
+Kabupaten Paniai,peat,3
+Kabupaten Mimika,alluvial,0
+Kabupaten Puncak,loam,2
+Kabupaten Dogiyai,sandy,4
+Kabupaten Intan Jaya,alluvial,0
+Kabupaten Deiyai,sandy,4
+Kabupaten Jayawijaya,alluvial,0
+Kabupaten Pegunungan Bintang,clay,1
+Kabupaten Yahukimo,peat,3
+Kabupaten Tolikara,peat,3
+Kabupaten Mamberamo Tengah,sandy,4
+Kabupaten Yalimo,loam,2
+Kabupaten Lanny Jaya,clay,1
+Kabupaten Nduga,sandy,4
+Kabupaten Sorong,sandy,4
+Kabupaten Sorong Selatan,alluvial,0
+Kabupaten Raja Ampat,peat,3
+Kabupaten Tambrauw,sandy,4
+Kabupaten Maybrat,sandy,4
+Kota Sorong,peat,3
