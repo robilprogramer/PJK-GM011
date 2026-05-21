@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+venv/
+env/
+.venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+*.log
+
+# Data (besar, bisa di-regenerate)
+data/raw/*.csv
+data/processed/*.npy
+
+# Models (besar, bisa di-retrain)
+# Uncomment jika tidak ingin push model ke Git:
+# models/*.pkl
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Environment
+.env
+*.env

@@ -1,0 +1,72 @@
+{
+  "total_rows": 18800,
+  "total_cities": 47,
+  "features": [
+    "city",
+    "province",
+    "lat",
+    "lng",
+    "month",
+    "season",
+    "rainfall_1h",
+    "rainfall_3h",
+    "rainfall_24h",
+    "humidity",
+    "temperature",
+    "wind_speed",
+    "elevation_m",
+    "distance_to_river_km",
+    "soil_type",
+    "soil_type_encoded",
+    "flood_prone_score",
+    "risk_level"
+  ],
+  "class_distribution": {
+    "awas": 8207,
+    "waspada": 5991,
+    "siaga": 3370,
+    "aman": 1232
+  },
+  "class_percent": {
+    "awas": 43.65,
+    "waspada": 31.87,
+    "siaga": 17.93,
+    "aman": 6.55
+  },
+  "provinces": [
+    "Kalimantan Timur",
+    "Kalimantan Barat",
+    "Sumatera Utara",
+    "Jawa Tengah",
+    "Jawa Timur",
+    "DKI Jakarta",
+    "Jawa Barat",
+    "Riau",
+    "DIY",
+    "Papua",
+    "Lampung",
+    "NTB",
+    "Sumatera Barat",
+    "Jambi",
+    "Maluku",
+    "Sulawesi Utara",
+    "Bengkulu",
+    "Banten",
+    "Sulawesi Selatan",
+    "Kalimantan Selatan",
+    "Sulawesi Tengah",
+    "Sumatera Selatan",
+    "Bali"
+  ],
+  "month_range": [
+    1,
+    12
+  ],
+  "sources": [
+    "BMKG - Pola curah hujan historis per wilayah Indonesia",
+    "BNPB DIBI - Data kejadian banjir 2015-2024",
+    "Badan Informasi Geospasial - Data elevasi SRTM",
+    "FAO Soil Map - Jenis tanah wilayah Indonesia"
+  ],
+  "label_logic": "Skor gabungan: rainfall (50%) + humidity (15%) + soil_type (15%) + elevation (10%) + distance_river (5%) × flood_prone_factor"
+}

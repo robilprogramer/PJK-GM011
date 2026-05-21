@@ -1,0 +1,44 @@
+{
+  "feature_names": [
+    "rainfall_1h",
+    "rainfall_3h",
+    "rainfall_24h",
+    "humidity",
+    "temperature",
+    "wind_speed",
+    "month",
+    "is_rainy_season",
+    "elevation_m",
+    "distance_to_river_km",
+    "soil_type_encoded",
+    "rain_intensity",
+    "rain_persistence",
+    "saturation_index",
+    "drainage_score",
+    "heat_humidity",
+    "city_risk"
+  ],
+  "n_features": 17,
+  "target_column": "risk_level",
+  "class_order": [
+    "aman",
+    "waspada",
+    "siaga",
+    "awas"
+  ],
+  "n_train_before_balance": 13160,
+  "n_train_after_balance": 22980,
+  "n_val": 2820,
+  "n_test": 2820,
+  "scaler": "StandardScaler",
+  "balancing": "Oversampling (resample sklearn)",
+  "engineered_features": [
+    "rain_intensity",
+    "rain_persistence",
+    "saturation_index",
+    "drainage_score",
+    "is_rainy_season",
+    "heat_humidity",
+    "city_risk"
+  ]
+}

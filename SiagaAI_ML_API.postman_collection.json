@@ -1,0 +1,127 @@
+{
+  "info": {
+    "name": "SiagaAI ML API",
+    "description": "Koleksi endpoint Custom ML Model SiagaAI — Random Forest Flood Risk Prediction.\n\nSetup:\n1. Set variable `base_url` = `http://localhost:8000`\n2. Jalankan 'Health Check' dulu untuk memastikan model loaded\n3. Lanjut ke endpoint Predict",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:8000" }
+  ],
+  "item": [
+    {
+      "name": "🏠 Root",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/",
+        "description": "Info API + daftar semua endpoint tersedia."
+      }
+    },
+    {
+      "name": "❤️ ML Health Check",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/ml/health",
+        "description": "Cek apakah ML model sudah loaded. Tampilkan versi, accuracy, F1-score."
+      }
+    },
+    {
+      "name": "📊 Model Info Lengkap",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/ml/model-info",
+        "description": "Detail lengkap model: hyperparameter, per-class metrics, feature importance, confusion matrix."
+      }
+    },
+    {
+      "name": "🌧️ Predict — Jakarta Banjir Ekstrem",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/ml/predict",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rainfall_1h\":  65.0,\n  \"rainfall_3h\":  180.0,\n  \"rainfall_24h\": 350.0,\n  \"humidity\":     95,\n  \"temperature\":  26.0,\n  \"wind_speed\":   8.2,\n  \"city_name\":    \"Jakarta Utara\",\n  \"month\":        1\n}"
+        },
+        "description": "Skenario: Jakarta Utara puncak musim hujan Januari. Expected: awas."
+      }
+    },
+    {
+      "name": "☀️ Predict — Bandung Cerah Kemarau",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/ml/predict",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rainfall_1h\":  0.0,\n  \"rainfall_3h\":  0.0,\n  \"rainfall_24h\": 3.0,\n  \"humidity\":     62,\n  \"temperature\":  22.0,\n  \"wind_speed\":   2.0,\n  \"city_name\":    \"Bandung\",\n  \"month\":        8\n}"
+        },
+        "description": "Skenario: Bandung kemarau Juli. Expected: aman."
+      }
+    },
+    {
+      "name": "🌊 Predict — Banjarmasin Pasang + Hujan",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/ml/predict",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rainfall_1h\":  45.0,\n  \"rainfall_3h\":  120.0,\n  \"rainfall_24h\": 200.0,\n  \"humidity\":     93,\n  \"temperature\":  27.0,\n  \"wind_speed\":   5.0,\n  \"city_name\":    \"Banjarmasin\",\n  \"month\":        2\n}"
+        },
+        "description": "Skenario: Banjarmasin (tanah gambut) musim hujan. Expected: awas."
+      }
+    },
+    {
+      "name": "🌦️ Predict — Yogyakarta Hujan Sedang",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/ml/predict",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rainfall_1h\":  12.0,\n  \"rainfall_3h\":  30.0,\n  \"rainfall_24h\": 60.0,\n  \"humidity\":     80,\n  \"temperature\":  27.0,\n  \"wind_speed\":   4.0,\n  \"city_name\":    \"Yogyakarta\",\n  \"month\":        10\n}"
+        },
+        "description": "Skenario: Yogyakarta pancaroba Oktober. Expected: waspada/siaga."
+      }
+    },
+    {
+      "name": "🔧 Predict — Override Geo Parameter",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/ml/predict",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rainfall_1h\":  25.0,\n  \"rainfall_3h\":  65.0,\n  \"rainfall_24h\": 130.0,\n  \"humidity\":     87,\n  \"temperature\":  27.5,\n  \"wind_speed\":   5.5,\n  \"city_name\":    \"Kota Tidak Dikenal\",\n  \"month\":        12,\n  \"elevation_m\":          8,\n  \"distance_to_river_km\": 1.5,\n  \"soil_type_encoded\":    0,\n  \"flood_prone_score\":    0.82\n}"
+        },
+        "description": "Test override parameter geo secara manual (bypass lookup table)."
+      }
+    },
+    {
+      "name": "⚡ Predict Auto — Minimal Input",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/ml/predict-auto",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"city_name\":    \"Semarang\",\n  \"temperature\":  27.5,\n  \"humidity\":     88,\n  \"rainfall_1h\":  22.0,\n  \"wind_speed\":   6.0\n}"
+        },
+        "description": "Prediksi cepat dengan input minimal. Cocok dipakai langsung dari OpenWeatherMap response."
+      }
+    },
+    {
+      "name": "📦 Batch Predict — 5 Kota Sekaligus",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/ml/batch",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"locations\": [\n    {\n      \"city_name\": \"Jakarta Utara\",\n      \"rainfall_1h\": 55, \"rainfall_3h\": 145, \"rainfall_24h\": 290,\n      \"humidity\": 94, \"temperature\": 26, \"wind_speed\": 7.5,\n      \"month\": 1\n    },\n    {\n      \"city_name\": \"Bandung\",\n      \"rainfall_1h\": 1, \"rainfall_3h\": 3, \"rainfall_24h\": 8,\n      \"humidity\": 65, \"temperature\": 21, \"wind_speed\": 2.0,\n      \"month\": 7\n    },\n    {\n      \"city_name\": \"Semarang\",\n      \"rainfall_1h\": 35, \"rainfall_3h\": 90, \"rainfall_24h\": 170,\n      \"humidity\": 91, \"temperature\": 27, \"wind_speed\": 6.0,\n      \"month\": 12\n    },\n    {\n      \"city_name\": \"Pontianak\",\n      \"rainfall_1h\": 50, \"rainfall_3h\": 130, \"rainfall_24h\": 240,\n      \"humidity\": 95, \"temperature\": 26, \"wind_speed\": 4.5,\n      \"month\": 2\n    },\n    {\n      \"city_name\": \"Surabaya\",\n      \"rainfall_1h\": 8, \"rainfall_3h\": 20, \"rainfall_24h\": 45,\n      \"humidity\": 76, \"temperature\": 29, \"wind_speed\": 3.5,\n      \"month\": 5\n    }\n  ]\n}"
+        },
+        "description": "Prediksi 5 kota sekaligus dalam satu request. Max 20 lokasi per batch."
+      }
+    }
+  ]
+}
