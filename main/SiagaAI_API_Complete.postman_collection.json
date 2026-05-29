@@ -1,0 +1,195 @@
+{
+  "info": {
+    "name": "SiagaAI API — Complete",
+    "description": "Koleksi lengkap seluruh endpoint SiagaAI Backend.\n\nSetup:\n1. Set variable `base_url` = `http://localhost:8000`\n2. Jalankan [Chat] Buat Sesi Baru → session_id auto-tersimpan\n3. Jalankan [ML] predict terlebih dahulu untuk cek model",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url",      "value": "http://localhost:8000" },
+    { "key": "session_id",    "value": "" },
+    { "key": "escalation_id", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "🏠 Root & Health",
+      "item": [
+        { "name": "Root", "request": { "method": "GET", "url": "{{base_url}}/" } },
+        { "name": "Health Check", "request": { "method": "GET", "url": "{{base_url}}/api/health" } }
+      ]
+    },
+    {
+      "name": "🤖 LLM Models",
+      "item": [
+        { "name": "Daftar Semua Model",  "request": { "method": "GET", "url": "{{base_url}}/api/models" } },
+        { "name": "Daftar Model Aktif",  "request": { "method": "GET", "url": "{{base_url}}/api/models/active" } },
+        { "name": "Detail — Llama 3.3", "request": { "method": "GET", "url": "{{base_url}}/api/models/llama-3.3-70b-versatile" } },
+        { "name": "Test Model",          "request": { "method": "POST", "url": "{{base_url}}/api/models/test?model_id=llama-3.3-70b-versatile" } }
+      ]
+    },
+    {
+      "name": "🧠 ML Model (Custom RF)",
+      "item": [
+        { "name": "ML Health", "request": { "method": "GET", "url": "{{base_url}}/api/ml/health" } },
+        { "name": "Model Info", "request": { "method": "GET", "url": "{{base_url}}/api/ml/model-info" } },
+        {
+          "name": "Predict — Jakarta Banjir Ekstrem",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": "{{base_url}}/api/ml/predict",
+            "body": { "mode": "raw", "raw": "{\n  \"rainfall_1h\": 65, \"rainfall_3h\": 180, \"rainfall_24h\": 350,\n  \"humidity\": 95, \"temperature\": 26, \"wind_speed\": 8,\n  \"city_name\": \"Jakarta Utara\", \"month\": 1\n}" }
+          }
+        },
+        {
+          "name": "Predict — Bandung Cerah",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": "{{base_url}}/api/ml/predict",
+            "body": { "mode": "raw", "raw": "{\n  \"rainfall_1h\": 0, \"rainfall_3h\": 0, \"rainfall_24h\": 3,\n  \"humidity\": 62, \"temperature\": 22, \"wind_speed\": 2,\n  \"city_name\": \"Bandung\", \"month\": 8\n}" }
+          }
+        },
+        {
+          "name": "Predict Auto (OWM→ML) — Jakarta",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": "{{base_url}}/api/ml/predict-auto",
+            "body": { "mode": "raw", "raw": "{\n  \"lat\": -6.2088, \"lng\": 106.8456,\n  \"city\": \"Jakarta Pusat\",\n  \"province\": \"DKI Jakarta\",\n  \"display_name\": \"Jakarta Pusat, DKI Jakarta\"\n}" }
+          }
+        },
+        {
+          "name": "Predict Auto (OWM→ML) — Surabaya",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": "{{base_url}}/api/ml/predict-auto",
+            "body": { "mode": "raw", "raw": "{\n  \"lat\": -7.2575, \"lng\": 112.7521,\n  \"city\": \"Surabaya\",\n  \"province\": \"Jawa Timur\",\n  \"display_name\": \"Surabaya, Jawa Timur\"\n}" }
+          }
+        },
+        {
+          "name": "Batch Predict — 3 Kota",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": "{{base_url}}/api/ml/batch",
+            "body": { "mode": "raw", "raw": "{\n  \"locations\": [\n    {\"city_name\":\"Jakarta Utara\",\"rainfall_1h\":55,\"rainfall_3h\":145,\"rainfall_24h\":290,\"humidity\":94,\"temperature\":26,\"wind_speed\":7},\n    {\"city_name\":\"Bandung\",\"rainfall_1h\":1,\"rainfall_3h\":3,\"rainfall_24h\":8,\"humidity\":65,\"temperature\":21,\"wind_speed\":2},\n    {\"city_name\":\"Semarang\",\"rainfall_1h\":35,\"rainfall_3h\":90,\"rainfall_24h\":170,\"humidity\":91,\"temperature\":27,\"wind_speed\":6}\n  ]\n}" }
+          }
+        }
+      ]
+    },
+    {
+      "name": "💬 Chat",
+      "item": [
+        {
+          "name": "Buat Sesi Baru",
+          "event": [{"listen":"test","script":{"exec":["const r=pm.response.json();","if(r.success&&r.data.session_id)pm.collectionVariables.set('session_id',r.data.session_id);"],"type":"text/javascript"}}],
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": "{{base_url}}/api/chat/sessions",
+            "body": { "mode": "raw", "raw": "{\n  \"location\": {\n    \"lat\": -6.2088, \"lng\": 106.8456,\n    \"city\": \"Jakarta Pusat\", \"province\": \"DKI Jakarta\",\n    \"display_name\": \"Jakarta Pusat, DKI Jakarta\"\n  },\n  \"model_name\": \"llama-3.3-70b-versatile\"\n}" }
+          }
+        },
+        {
+          "name": "Kirim Pesan — Cek Risiko",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": "{{base_url}}/api/chat/send",
+            "body": { "mode": "raw", "raw": "{\n  \"message\": \"Apakah aman keluar rumah sekarang? Hujan deras sejak pagi.\",\n  \"session_id\": \"{{session_id}}\",\n  \"model_name\": \"llama-3.3-70b-versatile\",\n  \"location\": {\"lat\":-6.2088,\"lng\":106.8456,\"city\":\"Jakarta Pusat\",\"province\":\"DKI Jakarta\",\"display_name\":\"Jakarta Pusat, DKI Jakarta\"},\n  \"history\": []\n}" }
+          }
+        },
+        {
+          "name": "Kirim Pesan — Panduan Evakuasi",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": "{{base_url}}/api/chat/send",
+            "body": { "mode": "raw", "raw": "{\n  \"message\": \"Air sudah masuk rumah. Bagaimana cara evakuasi yang benar?\",\n  \"session_id\": \"{{session_id}}\",\n  \"model_name\": \"llama-3.3-70b-versatile\",\n  \"location\": {\"lat\":-6.2088,\"lng\":106.8456,\"city\":\"Jakarta Pusat\",\"province\":\"DKI Jakarta\",\"display_name\":\"Jakarta Pusat, DKI Jakarta\"},\n  \"history\": []\n}" }
+          }
+        },
+        {
+          "name": "Kirim Pesan — Ganti Model Mixtral",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": "{{base_url}}/api/chat/send",
+            "body": { "mode": "raw", "raw": "{\n  \"message\": \"Apa isi tas siaga bencana yang harus disiapkan?\",\n  \"session_id\": \"{{session_id}}\",\n  \"model_name\": \"mixtral-8x7b-32768\",\n  \"location\": null,\n  \"history\": []\n}" }
+          }
+        },
+        {
+          "name": "Kirim Pesan — Situasi DARURAT",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": "{{base_url}}/api/chat/send",
+            "body": { "mode": "raw", "raw": "{\n  \"message\": \"TOLONG! Saya terjebak, banjir sudah sepinggang, tidak bisa keluar!\",\n  \"session_id\": \"{{session_id}}\",\n  \"model_name\": \"llama-3.1-8b-instant\",\n  \"location\": {\"lat\":-6.2088,\"lng\":106.8456,\"city\":\"Jakarta Pusat\",\"province\":\"DKI Jakarta\",\"display_name\":\"Jakarta Pusat, DKI Jakarta\"},\n  \"history\": []\n}" }
+          }
+        },
+        { "name": "Info Sesi",      "request": { "method": "GET",    "url": "{{base_url}}/api/chat/sessions/{{session_id}}" } },
+        { "name": "Riwayat Pesan", "request": { "method": "GET",    "url": "{{base_url}}/api/chat/sessions/{{session_id}}/history" } },
+        { "name": "Tutup Sesi",    "request": { "method": "DELETE", "url": "{{base_url}}/api/chat/sessions/{{session_id}}" } }
+      ]
+    },
+    {
+      "name": "📍 Location",
+      "item": [
+        {
+          "name": "Status Cuaca + Risiko — Jakarta",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": "{{base_url}}/api/location/status",
+            "body": { "mode": "raw", "raw": "{\n  \"lat\": -6.2088, \"lng\": 106.8456,\n  \"city\": \"Jakarta Pusat\", \"province\": \"DKI Jakarta\",\n  \"display_name\": \"Jakarta Pusat, DKI Jakarta\"\n}" }
+          }
+        },
+        {
+          "name": "Status Cuaca + Risiko — Bandung",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": "{{base_url}}/api/location/status",
+            "body": { "mode": "raw", "raw": "{\n  \"lat\": -6.9147, \"lng\": 107.6098,\n  \"city\": \"Bandung\", \"province\": \"Jawa Barat\",\n  \"display_name\": \"Bandung, Jawa Barat\"\n}" }
+          }
+        },
+        { "name": "Geocode Kota",        "request": { "method": "GET", "url": "{{base_url}}/api/location/geocode?city=Yogyakarta" } },
+        { "name": "Reverse Geocode",     "request": { "method": "GET", "url": "{{base_url}}/api/location/reverse?lat=-6.2088&lng=106.8456" } },
+        { "name": "Gempa Terkini BMKG",  "request": { "method": "GET", "url": "{{base_url}}/api/location/earthquakes?limit=5" } },
+        { "name": "Prakiraan Cuaca 24h", "request": { "method": "GET", "url": "{{base_url}}/api/location/forecast?lat=-6.2088&lng=106.8456" } }
+      ]
+    },
+    {
+      "name": "🚨 Escalation",
+      "item": [
+        {
+          "name": "Laporkan Situasi Darurat",
+          "event": [{"listen":"test","script":{"exec":["const r=pm.response.json();","if(r.success&&r.data.escalation_id)pm.collectionVariables.set('escalation_id',r.data.escalation_id);"],"type":"text/javascript"}}],
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": "{{base_url}}/api/escalate",
+            "body": { "mode": "raw", "raw": "{\n  \"session_id\": \"{{session_id}}\",\n  \"location\": {\"lat\":-6.2088,\"lng\":106.8456,\"city\":\"Jakarta Pusat\",\"province\":\"DKI Jakarta\",\"display_name\":\"Jakarta Pusat, DKI Jakarta\"},\n  \"situation\": \"Banjir 1 meter masuk rumah, 4 orang terjebak termasuk 1 balita.\",\n  \"contact_name\": \"Budi Santoso\",\n  \"contact_phone\": \"081234567890\"\n}" }
+          }
+        },
+        { "name": "Cek Status Laporan", "request": { "method": "GET", "url": "{{base_url}}/api/escalate/{{escalation_id}}" } }
+      ]
+    },
+    {
+      "name": "📚 Knowledge Base",
+      "item": [
+        { "name": "Stats KB",   "request": { "method": "GET",    "url": "{{base_url}}/api/knowledge/stats" } },
+        { "name": "Reload KB",  "request": { "method": "POST",   "url": "{{base_url}}/api/knowledge/reload" } },
+        {
+          "name": "Search KB",
+          "request": {
+            "method": "POST",
+            "header": [{"key":"Content-Type","value":"application/json"}],
+            "url": "{{base_url}}/api/knowledge/search",
+            "body": { "mode": "raw", "raw": "{\n  \"query\": \"cara evakuasi saat banjir\",\n  \"n_results\": 3\n}" }
+          }
+        }
+      ]
+    }
+  ]
+}
