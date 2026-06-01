@@ -548,7 +548,7 @@ export default function AdminPage() {
         {/* Footer */}
         <div className="text-center py-4">
           <p className="text-xs text-slate-400">
-            SiagaAI Admin Dashboard · PJK-GM011 · DCamp 2025 × IBM Skillsbuild
+            SiagaAI Admin Dashboard · PJK-GM011 · IBM Skillsbuild
           </p>
         </div>
       </main>
