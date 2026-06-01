@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST="{\"components\\\\location\\\\MLPredictionCard.tsx -> recharts\":{\"id\":\"components\\\\location\\\\MLPredictionCard.tsx -> recharts\",\"files\":[\"static/chunks/_app-pages-browser_node_modules_recharts_es6_index_js.js\"]}}"

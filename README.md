@@ -1,69 +1,50 @@
-# SiagaAI — Frontend
+# SiagaAI — Frontend (Next.js 14)
 
-Antarmuka chatbot SiagaAI berbasis
+## 🚀 Quick Start
 
-## Struktur
+```bash
+npm install
+cp .env.example .env.local    # NEXT_PUBLIC_API_URL=http://localhost:8000
+npm run dev                   # http://localhost:3000
+```
+
+## 📁 Struktur
 
 ```
 frontend/
 ├── app/
-│   ├── layout.tsx        ← Root layout + metadata
-│   ├── page.tsx          ← Halaman utama (orchestrator)
-│   └── globals.css       ← Global styles + Tailwind
+│   ├── layout.tsx      ← Root layout
+│   ├── page.tsx        ← Halaman utama (chat + ML card + SOS)
+│   └── globals.css
 ├── components/
 │   ├── chat/
-│   │   ├── ChatBubble.tsx    ← Bubble pesan + intent badge + markdown
-│   │   ├── ChatInput.tsx     ← Input textarea + quick suggestions
-│   │   └── SOSModal.tsx      ← Modal panic button + form darurat
+│   │   ├── ChatBubble.tsx   ← Bubble pesan + markdown + intent badge
+│   │   ├── ChatInput.tsx    ← Input + quick suggestions
+│   │   └── SOSModal.tsx     ← Modal darurat + form eskalasi
 │   ├── location/
-│   │   ├── LocationSetup.tsx     ← Onboarding GPS/manual input
-│   │   ├── WeatherCard.tsx       ← Card cuaca + risk indicators
-│   │   └── MLPredictionCard.tsx  ← SHAP chart + ML risk score
+│   │   ├── LocationSetup.tsx     ← GPS auto + manual + quick cities
+│   │   ├── WeatherCard.tsx       ← Cuaca real-time + risk badges
+│   │   └── MLPredictionCard.tsx  ← SHAP chart + risk score
 │   ├── layout/
-│   │   └── AppHeader.tsx     ← Header: brand + lokasi + model selector
+│   │   └── AppHeader.tsx    ← Header + lokasi + model selector
 │   └── ui/
-│       ├── RiskBadge.tsx     ← Badge: aman/waspada/siaga/awas
-│       └── ModelSelector.tsx ← Dropdown pilih LLM model
+│       ├── RiskBadge.tsx    ← Badge aman/waspada/siaga/awas
+│       └── ModelSelector.tsx ← Dropdown ganti LLM dinamis
 ├── lib/
-│   ├── api.ts              ← Semua API calls ke FastAPI backend
-│   ├── store.ts            ← Zustand state: location, chat, settings
-│   ├── utils.ts            ← Helper: cn, formatTime, generateId
-│   └── hooks/
-│       └── useGeolocation.ts ← GPS detect + manual geocode
-└── types/
-    └── index.ts            ← Semua TypeScript types global
+│   ├── api.ts          ← Semua API calls ke backend
+│   ├── store.ts        ← Zustand: location, chat, settings
+│   ├── utils.ts        ← cn, formatTime, generateId
+│   └── hooks/useGeolocation.ts
+└── types/index.ts      ← TypeScript global types
 ```
 
-## Setup
+## 🔑 Environment
 
-```bash
-# Install dependencies
-npm install
-
-# Setup environment
-cp .env.example .env.local
-# Isi: NEXT_PUBLIC_API_URL=http://localhost:8000
-
-# Jalankan dev server
-npm run dev
+```env
+NEXT_PUBLIC_API_URL=http://localhost:8000
 ```
 
-Buka: **http://localhost:3000**
-
-## Environment Variables
-
-| Variable                | Default                   | Keterangan          |
-| ----------------------- | ------------------------- | ------------------- |
-| `NEXT_PUBLIC_API_URL` | `http://localhost:8000` | URL FastAPI backend |
-
-## Build untuk Production
-
-```bash
-npm run build
-npm run start
-```
-
-## Deploy ke Vercel
+## 📦 Deploy Vercel
 
 ```bash
 npx vercel

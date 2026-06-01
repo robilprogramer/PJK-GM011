@@ -2,13 +2,13 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { AlertTriangle } from 'lucide-react'
 
-import { LocationSetup } from '@/components/location/LocationSetup'
-import { WeatherCard } from '@/components/location/WeatherCard'
-import { MLPredictionCard } from '@/components/location/MLPredictionCard'
-import { ChatBubble } from '@/components/chat/ChatBubble'
-import { ChatInput } from '@/components/chat/ChatInput'
-import { SOSModal } from '@/components/chat/SOSModal'
-import { AppHeader } from '@/components/layout/AppHeader'
+import { LocationSetup }      from '@/components/location/LocationSetup'
+import { WeatherCard }        from '@/components/location/WeatherCard'
+import { MLPredictionCard }   from '@/components/location/MLPredictionCard'
+import { ChatBubble }         from '@/components/chat/ChatBubble'
+import { ChatInput }          from '@/components/chat/ChatInput'
+import { SOSModal }           from '@/components/chat/SOSModal'
+import { AppHeader }          from '@/components/layout/AppHeader'
 
 import { useLocationStore, useChatStore, useSettingsStore } from '@/lib/store'
 import {
@@ -19,128 +19,150 @@ import type { LocationStatus, FloodPrediction, ChatMessage } from '@/types'
 import { generateId } from '@/lib/utils'
 
 export default function Home() {
-  const { location, setOverallRisk, clear: clearLocation } = useLocationStore()
+  const {
+    location, setOverallRisk, clear: clearLocation,
+  } = useLocationStore()
   const {
     session, messages, isLoading, isSOS,
-    setSession, addMessage, updateLastAssistant, setLoading, setIsSOS, clearChat,
+    setSession, addMessage, updateLastAssistant,
+    setLoading, setIsSOS, clearChat,
   } = useChatStore()
   const { selectedModel } = useSettingsStore()
 
-  const [locationStatus, setLocationStatus] = useState<LocationStatus | null>(null)
-  const [mlPrediction, setMlPrediction] = useState<FloodPrediction | null>(null)
-  const [statusLoading, setStatusLoading] = useState(false)
-  const [changeLocation, setChangeLocation] = useState(false)
+  const [locationStatus,  setLocationStatus]  = useState<LocationStatus | null>(null)
+  const [mlPrediction,    setMlPrediction]    = useState<FloodPrediction | null>(null)
+  const [statusLoading,   setStatusLoading]   = useState(false)
+  const [changeLocation,  setChangeLocation]  = useState(false)
 
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const sessionRef     = useRef(session)
+  sessionRef.current   = session
 
   // Auto-scroll
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
-  // Fetch status when location changes
+  // Fetch real-time data + init chat saat lokasi berubah
   useEffect(() => {
     if (!location) return
-    fetchLocationData()
-    initSession()
-  }, [location])
+    void fetchAll()
+    void initSession()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location?.lat, location?.lng])
 
-  const fetchLocationData = async () => {
+  // ─── Fetch cuaca + ML prediction ──────────────────────────
+  const fetchAll = useCallback(async () => {
     if (!location) return
     setStatusLoading(true)
     try {
-      const [status, ml] = await Promise.allSettled([
+      // Paralel: location status (cuaca+risiko) + ML predict-auto (OWM→ML)
+      const [statusRes, mlRes] = await Promise.allSettled([
         getLocationStatus(location),
         predictFloodAuto(location),
       ])
-      if (status.status === 'fulfilled') {
-        setLocationStatus(status.value)
-        setOverallRisk(status.value.overall_risk)
+      if (statusRes.status === 'fulfilled') {
+        setLocationStatus(statusRes.value)
+        setOverallRisk(statusRes.value.overall_risk)
       }
-      if (ml.status === 'fulfilled') setMlPrediction(ml.value)
-    } catch { /* silent */ }
-    finally { setStatusLoading(false) }
-  }
+      if (mlRes.status === 'fulfilled') {
+        setMlPrediction(mlRes.value)
+      }
+    } finally {
+      setStatusLoading(false)
+    }
+  }, [location, setOverallRisk])
 
-  const initSession = async () => {
+  // ─── Init chat session ────────────────────────────────────
+  const initSession = useCallback(async () => {
     if (!location) return
     try {
-      // Close old session
-      if (session) await closeSession(session.session_id).catch(() => {})
+      if (sessionRef.current) {
+        await closeSession(sessionRef.current.session_id).catch(() => {})
+      }
       clearChat()
       const s = await createSession(location, selectedModel)
       setSession(s)
-
-      // Welcome message
-      const welcomeRisk = locationStatus?.overall_risk || 'aman'
-      const welcomeContent = `Halo! Saya **SiagaAI** 👋\n\nSaya sudah mendeteksi lokasi Anda di **${location.city}, ${location.province}**.\n\nSilakan tanyakan apa saja seputar kondisi bencana, panduan evakuasi, atau pertolongan pertama. Saya siap membantu! 🚀`
       addMessage({
-        id: generateId(), role: 'assistant',
-        content: welcomeContent, intent: 'general',
+        id:        generateId(),
+        role:      'assistant',
+        content:   `Halo! Saya **SiagaAI** 👋\n\nSaya sudah mendeteksi lokasi Anda di **${location.city}, ${location.province}**.\n\nTanyakan apa saja seputar kondisi bencana, panduan evakuasi, atau pertolongan pertama. Saya siap membantu! 🚀`,
+        intent:    'general',
         timestamp: new Date().toISOString(),
       })
-    } catch { /* silent */ }
-  }
+    } catch {
+      // silent — user bisa coba lagi
+    }
+  }, [location, selectedModel, clearChat, setSession, addMessage])
 
+  // ─── Kirim pesan ke chatbot ───────────────────────────────
   const handleSend = useCallback(async (text: string) => {
-    if (!session || isLoading) return
+    const currentSession = sessionRef.current
+    if (!currentSession || isLoading) return
 
     const userMsg: ChatMessage = {
-      id: generateId(), role: 'user',
-      content: text, timestamp: new Date().toISOString(),
+      id:        generateId(),
+      role:      'user',
+      content:   text,
+      timestamp: new Date().toISOString(),
     }
     addMessage(userMsg)
 
-    // Streaming placeholder
-    const assistantId = generateId()
+    // Placeholder streaming
     addMessage({
-      id: assistantId, role: 'assistant',
-      content: '', isStreaming: true,
-      timestamp: new Date().toISOString(),
+      id:          generateId(),
+      role:        'assistant',
+      content:     '',
+      isStreaming: true,
+      timestamp:   new Date().toISOString(),
     })
     setLoading(true)
 
     try {
       const history = messages
-        .filter(m => !m.isStreaming)
+        .filter(m => !m.isStreaming && m.content)
         .slice(-10)
         .map(m => ({ role: m.role, content: m.content }))
 
       const res = await sendMessage({
-        message: text,
-        session_id: session.session_id,
+        message:    text,
+        session_id: currentSession.session_id,
         location,
         history,
         model_name: selectedModel,
       })
 
       updateLastAssistant(res.reply, {
-        intent: res.intent as any,
-        model_used: res.model_used,
+        intent:              res.intent as ChatMessage['intent'],
+        model_used:          res.model_used,
         requires_escalation: res.requires_escalation,
-        suggested_actions: res.suggested_actions,
+        suggested_actions:   res.suggested_actions,
       })
 
       if (res.requires_escalation) setIsSOS(true)
-    } catch (e: any) {
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : 'Terjadi kesalahan'
       updateLastAssistant(
-        'Maaf, terjadi kesalahan. Pastikan backend berjalan dan coba lagi.',
+        `Maaf, terjadi kesalahan: ${msg}\n\nPastikan backend berjalan di ${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}`,
         { intent: 'general' }
       )
     } finally {
       setLoading(false)
     }
-  }, [session, isLoading, messages, location, selectedModel])
+  }, [
+    isLoading, messages, location, selectedModel,
+    addMessage, updateLastAssistant, setLoading, setIsSOS,
+  ])
 
-  // ── Not yet set location ──────────────────────────────────
+  // ─── Belum pilih lokasi ───────────────────────────────────
   if (!location || changeLocation) {
     return (
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-slate-50">
         <div className="max-w-lg mx-auto px-4 py-8">
           {changeLocation && (
             <button
               onClick={() => setChangeLocation(false)}
-              className="mb-4 text-sm text-blue-600 hover:underline"
+              className="mb-4 text-sm text-blue-600 hover:underline flex items-center gap-1"
             >
               ← Kembali ke chat
             </button>
@@ -151,41 +173,48 @@ export default function Home() {
     )
   }
 
-  // ── Main App ──────────────────────────────────────────────
+  // ─── Main App ─────────────────────────────────────────────
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-slate-50">
       <AppHeader onChangeLocation={() => setChangeLocation(true)} />
 
-      <div className="flex-1 flex max-w-6xl mx-auto w-full px-4 py-4 gap-4">
-        {/* LEFT: Sidebar cards */}
-        <aside className="hidden lg:flex flex-col gap-4 w-80 flex-shrink-0">
+      <div className="flex-1 flex max-w-6xl mx-auto w-full px-4 py-4 gap-4 min-h-0">
+
+        {/* Sidebar: cuaca + ML (hanya desktop) */}
+        <aside className="hidden lg:flex flex-col gap-3 w-72 xl:w-80 flex-shrink-0">
           {locationStatus && (
             <WeatherCard
               status={locationStatus}
-              onRefresh={fetchLocationData}
+              onRefresh={fetchAll}
               isLoading={statusLoading}
             />
           )}
           {mlPrediction && <MLPredictionCard prediction={mlPrediction} />}
 
-          {/* Risk alert banner */}
+          {/* Alert aktif */}
           {locationStatus && ['siaga','awas'].includes(locationStatus.overall_risk) && (
             <div className="bg-red-50 border border-red-200 rounded-2xl p-4">
-              <div className="flex items-center gap-2 text-red-700 font-semibold mb-1">
+              <div className="flex items-center gap-2 font-semibold text-red-700 mb-1 text-sm">
                 <AlertTriangle className="w-4 h-4" />
                 Peringatan Aktif
               </div>
-              <p className="text-sm text-red-600">{locationStatus.summary}</p>
+              <p className="text-xs text-red-600 leading-relaxed">
+                {locationStatus.summary}
+              </p>
             </div>
           )}
         </aside>
 
-        {/* RIGHT: Chat */}
-        <main className="flex-1 flex flex-col min-h-0">
-          {/* Mobile weather strip */}
+        {/* Area Chat */}
+        <main className="flex-1 flex flex-col min-h-0 min-w-0">
+          {/* Weather card mobile */}
           {locationStatus && (
             <div className="lg:hidden mb-3">
-              <WeatherCard status={locationStatus} onRefresh={fetchLocationData} isLoading={statusLoading} />
+              <WeatherCard
+                status={locationStatus}
+                onRefresh={fetchAll}
+                isLoading={statusLoading}
+              />
             </div>
           )}
 
@@ -198,17 +227,17 @@ export default function Home() {
           </div>
 
           {/* SOS Button */}
-          <div className="mb-3">
+          <div className="mb-2 pt-2">
             <button
               onClick={() => setIsSOS(true)}
-              className="w-full py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl flex items-center justify-center gap-2 transition-colors shadow-sm text-sm"
+              className="w-full py-2.5 bg-red-600 hover:bg-red-700 active:scale-[0.98] text-white font-bold rounded-xl flex items-center justify-center gap-2 transition-all text-sm shadow-sm"
             >
               <AlertTriangle className="w-4 h-4" />
               🆘 PANIC BUTTON — Laporkan Situasi Darurat
             </button>
           </div>
 
-          {/* Chat Input */}
+          {/* Input */}
           <ChatInput
             onSend={handleSend}
             isLoading={isLoading}

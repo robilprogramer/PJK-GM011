@@ -1,7 +1,9 @@
 import { clsx, type ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
+// cn: gabungkan class Tailwind dengan aman (handle conflict)
 export function cn(...inputs: ClassValue[]) {
-  return clsx(inputs)
+  return twMerge(clsx(inputs))
 }
 
 export function formatTime(iso: string): string {
