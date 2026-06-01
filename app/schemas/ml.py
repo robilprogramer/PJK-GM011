@@ -78,14 +78,14 @@ class MLModelInfoResponse(BaseModel):
     accuracy:                 float
     f1_score_weighted:        float
     f1_score_macro:           float
-    roc_auc:                  Optional[float]
+    roc_auc:    Optional[float] = None
     cv_f1_mean:               Optional[float]
-    cv_f1_std:                Optional[float]
+    cv_f1_std:  Optional[float] = None
     n_features:               int
     feature_names:            list[str]
     class_names:              list[str]
-    n_estimators:             Optional[int]
-    total_training_samples:   Optional[int]
+    n_estimators:           Optional[int] = None
+    total_training_samples: Optional[int] = None
     per_class_metrics:        dict
     top5_features:            list[str]
     is_loaded:                bool

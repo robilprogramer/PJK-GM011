@@ -49,9 +49,9 @@ class OpenWeatherService:
                     params={
                         "lat": lat, "lon": lng,
                         "appid": settings.OWM_API_KEY,
-                        # "units": "metric",
-                        # "lang": "id",
-                        # "cnt": 8,
+                        "units": "metric",
+                        "lang": "id",
+                        "cnt": 8,
                     },
                 )
                 resp.raise_for_status()
