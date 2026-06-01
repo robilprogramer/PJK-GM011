@@ -1,4 +1,4 @@
-# SiagaAI — Frontend (Next.js 14)
+# SiagaAI — Frontend
 
 ## 🚀 Quick Start
 
