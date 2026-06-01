@@ -1,19 +1,17 @@
 'use client'
-import dynamic from 'next/dynamic'
+import { useEffect, useState } from 'react'
 import { Brain, Info } from 'lucide-react'
 import type { FloodPrediction } from '@/types'
 import { RiskBadge } from '@/components/ui/RiskBadge'
-
-// Dynamic import recharts — avoid SSR error
-const BarChart      = dynamic(() => import('recharts').then(m => m.BarChart),      { ssr: false })
-const Bar           = dynamic(() => import('recharts').then(m => m.Bar),           { ssr: false })
-const XAxis         = dynamic(() => import('recharts').then(m => m.XAxis),         { ssr: false })
-const YAxis         = dynamic(() => import('recharts').then(m => m.YAxis),         { ssr: false })
-const Tooltip       = dynamic(() => import('recharts').then(m => m.Tooltip),       { ssr: false })
-const Cell          = dynamic(() => import('recharts').then(m => m.Cell),          { ssr: false })
-const ResponsiveContainer = dynamic(
-  () => import('recharts').then(m => m.ResponsiveContainer), { ssr: false }
-)
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Cell,
+  ResponsiveContainer,
+} from 'recharts'
 
 interface Props { prediction: FloodPrediction }
 
@@ -48,6 +46,12 @@ const CONF_LABELS: Record<string, string> = {
 const BAR_COLORS = ['#3b82f6','#6366f1','#8b5cf6','#a78bfa','#c4b5fd','#7c3aed','#4f46e5']
 
 export function MLPredictionCard({ prediction }: Props) {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   const chartData = prediction.top_features.slice(0, 5).map((f, i) => ({
     name:       FEATURE_LABELS[f.feature] || f.feature,
     importance: parseFloat((f.importance * 100).toFixed(1)),
@@ -113,38 +117,40 @@ export function MLPredictionCard({ prediction }: Props) {
             </p>
           </div>
           <div style={{ height: 118 }}>
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                data={chartData}
-                layout="vertical"
-                margin={{ left: 0, right: 16, top: 0, bottom: 0 }}
-              >
-                <XAxis
-                  type="number"
-                  tick={{ fontSize: 10, fill: '#94a3b8' }}
-                  tickFormatter={(v: number) => `${v}%`}
-                  axisLine={false}
-                  tickLine={false}
-                />
-                <YAxis
-                  type="category"
-                  dataKey="name"
-                  tick={{ fontSize: 10, fill: '#64748b' }}
-                  width={86}
-                  axisLine={false}
-                  tickLine={false}
-                />
-                <Tooltip
-                  formatter={(val: number) => [`${val}%`, 'Importance']}
-                  contentStyle={{ fontSize: 11, borderRadius: 8, border: '1px solid #e2e8f0' }}
-                />
-                <Bar dataKey="importance" radius={[0, 4, 4, 0]}>
-                  {chartData.map((entry, i) => (
-                    <Cell key={i} fill={entry.color} />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
+            {isClient && (
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  data={chartData}
+                  layout="vertical"
+                  margin={{ left: 0, right: 16, top: 0, bottom: 0 }}
+                >
+                  <XAxis
+                    type="number"
+                    tick={{ fontSize: 10, fill: '#94a3b8' }}
+                    tickFormatter={(v: number) => `${v}%`}
+                    axisLine={false}
+                    tickLine={false}
+                  />
+                  <YAxis
+                    type="category"
+                    dataKey="name"
+                    tick={{ fontSize: 10, fill: '#64748b' }}
+                    width={86}
+                    axisLine={false}
+                    tickLine={false}
+                  />
+                  <Tooltip
+                    formatter={(val) => [`${val}%`, 'Importance']}
+                    contentStyle={{ fontSize: 11, borderRadius: 8, border: '1px solid #e2e8f0' }}
+                  />
+                  <Bar dataKey="importance" radius={[0, 4, 4, 0]}>
+                    {chartData.map((entry, i) => (
+                      <Cell key={i} fill={entry.color} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            )}
           </div>
         </div>
       </div>
