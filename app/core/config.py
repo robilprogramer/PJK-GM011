@@ -60,6 +60,11 @@ class Settings(BaseSettings):
     EQ_SIAGA_MAG: float = 5.5
     EQ_AWAS_MAG: float = 7.0
 
+
+   # ─── Hugging Face ─────────────────────────────────────────────  ← tambah di sini
+    HF_REPO_ID: str = Field(default="robil/siagaai-flood-risk-model")
+    HF_TOKEN: str = Field(default="")
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"

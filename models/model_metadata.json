@@ -1,7 +1,7 @@
 {
   "model_type": "RandomForestClassifier",
-  "model_version": "20260505_0617",
-  "trained_at": "2026-05-05T06:17:19.703060",
+  "model_version": "20260521_0852",
+  "trained_at": "2026-05-21T08:52:54.569783",
   "framework": "scikit-learn",
   "hyperparameters": {
     "n_estimators": 300,
